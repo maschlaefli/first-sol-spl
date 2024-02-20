@@ -53,7 +53,7 @@ async function main(){
         const data: UpdateMetadataAccountV2InstructionData = {
             data: some(onChainData),
             discriminator: 0,
-            isMutable: some(true),
+            isMutable: some(false),
             newUpdateAuthority: none<PublicKey>(),
             primarySaleHappened: none<boolean>()
         }

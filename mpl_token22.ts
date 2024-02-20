@@ -33,7 +33,7 @@ async function main(){
     const ourMetadata = {
         name: "420 Coin", 
         symbol: "FTC",
-        uri: "metadata.json",
+        uri: "https://github.com/maschlaefli/first-sol-spl/blob/main/metadata.json",
     }
     if(INITIALIZE){
         const onChainData = {

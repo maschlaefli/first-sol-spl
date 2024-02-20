@@ -1,5 +1,5 @@
 
-import {Collection, CreateMetadataAccountV3InstructionAccounts, CreateMetadataAccountV3InstructionDataArgs, Creator, MPL_TOKEN_METADATA_PROGRAM_ID, UpdateMetadataAccountV2InstructionAccounts, UpdateMetadataAccountV2InstructionData, Uses, createMetadataAccountV3, updateMetadataAccountV2, findMetadataPda} from "@metaplex-foundation/mpl-token-metadata";
+import {Collection, CreateMetadataAccountV3InstructionAccounts, CreateMetadataAccountV3InstructionDataArgs, Creator, MPL_TOKEN_METADATA_PROGRAM_ID, UpdateMetadataAccountV2InstructionAccounts, UpdateMetadataAccountV2InstructionData, Uses, createMetadataAccountV3, updateMetadataAccountV2, findMetadataPda, AuthorityType} from "@metaplex-foundation/mpl-token-metadata";
 import * as web3 from "@solana/web3.js";
 import { PublicKey, createSignerFromKeypair, none, signerIdentity, some } from "@metaplex-foundation/umi";
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
@@ -13,7 +13,7 @@ export function loadWalletKey(keypairFile:string): web3.Keypair {
     return loaded;
   }
 
-const INITIALIZE = true;
+const INITIALIZE = false;
 
 async function main(){
     console.log("let's name some tokens in 2024!");
@@ -27,7 +27,7 @@ async function main(){
     const ourMetadata = {
         name: "420 Coin", 
         symbol: "FTC",
-        uri: "metadata.json",
+        uri: "https://raw.githubusercontent.com/maschlaefli/first-sol-spl/main/metadata.json",
     }
     const onChainData = {
         ...ourMetadata,
